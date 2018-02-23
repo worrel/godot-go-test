@@ -6,7 +6,7 @@
 [ext_resource path="res://assets/art/playerGrey_up1.png" type="Texture" id=4]
 [ext_resource path="res://assets/art/playerGrey_up2.png" type="Texture" id=5]
 
-[sub_resource type="NativeScript" id=2]
+[sub_resource type="NativeScript" id=1]
 
 resource_local_to_scene = true
 resource_name = "MyGodotClass"
@@ -14,7 +14,7 @@ class_name = "main.MyGodotClass"
 library = ExtResource( 1 )
 _sections_unfolded = [ "Resource" ]
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="SpriteFrames" id=2]
 
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
@@ -28,7 +28,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=4]
+[sub_resource type="CapsuleShape2D" id=3]
 
 custom_solver_bias = 0.0
 radius = 10.1111
@@ -43,7 +43,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = SubResource( 2 )
+script = SubResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -52,14 +52,14 @@ __meta__ = {
 
 position = Vector2( 0, -1 )
 scale = Vector2( 0.5, 0.5 )
-frames = SubResource( 3 )
+frames = SubResource( 2 )
 animation = "right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
 position = Vector2( -0.152109, 0.241126 )
 scale = Vector2( 2.71249, 1.53744 )
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_lock_": true
 }
