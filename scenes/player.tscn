@@ -1,0 +1,69 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://mygodotlib.gdnlib" type="GDNativeLibrary" id=1]
+[ext_resource path="res://assets/art/playerGrey_walk1.png" type="Texture" id=2]
+[ext_resource path="res://assets/art/playerGrey_walk2.png" type="Texture" id=3]
+[ext_resource path="res://assets/art/playerGrey_up1.png" type="Texture" id=4]
+[ext_resource path="res://assets/art/playerGrey_up2.png" type="Texture" id=5]
+
+[sub_resource type="NativeScript" id=2]
+
+resource_local_to_scene = true
+resource_name = "MyGodotClass"
+class_name = "main.MyGodotClass"
+library = ExtResource( 1 )
+_sections_unfolded = [ "Resource" ]
+
+[sub_resource type="SpriteFrames" id=3]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "right",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "up",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=4]
+
+custom_solver_bias = 0.0
+radius = 10.1111
+height = 24.7706
+
+[node name="Player" type="Area2D" index="0"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
+
+position = Vector2( 0, -1 )
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 3 )
+animation = "right"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+position = Vector2( -0.152109, 0.241126 )
+scale = Vector2( 2.71249, 1.53744 )
+shape = SubResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Node2D" type="Node2D" parent="." index="2"]
+
+
